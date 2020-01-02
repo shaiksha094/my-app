@@ -15,3 +15,5 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name : tomcat depoly 
+      run : curl -v -u admin:admin -T /home/runner/work/my-app/my-app/target/my-app-1.0-SNAPSHOT.jar 'http://ec2-35-154-242-225.ap-south-1.compute.amazonaws.com:8080/manager/text/depoly?path=/my-app-githubaction'
